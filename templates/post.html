@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Записи пользователя {{ profile.username }}{% endblock %}
+{% block header %}Записи сообщества {{ profile.username }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-3 mb-3 mt-1">
+            {% include "includes/card_profile.html" %}
+        </div>
+
+        <div class="col-md-9">
+            {% include "includes/card_post.html" with post=post %}
+
+            {% include 'includes/comments.html' %}
+        </div>
+    </div>
+{% endblock %}
